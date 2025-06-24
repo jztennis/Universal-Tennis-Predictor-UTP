@@ -1,4 +1,4 @@
-# Universal Tennis Predictor (UTP) 5/7/25
+# Universal Tennis Predictor (UTP) 6/24/25
 
 This repository contains our project to develop a tennis prediction system that collects player data through automated scrapers, analyzes match perforamnce, and delivers accurate match outcome predictions through an interactive web application. The system uses UTR (Universal Tennis Rating) data, historical match performances, and machine learning to provide probabilistic forecasts for professional tennis matches.
 
