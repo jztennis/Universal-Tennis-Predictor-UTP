@@ -1,6 +1,6 @@
 ## Core Files
 
-[`matches.py`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/matches.py)
+[`matches.py`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/matches.py)
 
 The "main" file of the scraper that orchestrates the entire process. It:
 - Initializes logging and configuration
@@ -9,7 +9,7 @@ The "main" file of the scraper that orchestrates the entire process. It:
 - Includes extensive logging for debugging and future troubleshooting
 - Manages error handling and retry logic
 
-[`scraper.py`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/scraper.py)
+[`scraper.py`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/scraper.py)
 
 Contains the core scraping functions and functionality:
 - Originally received from a classmate (approximately 85% unchanged)
@@ -18,7 +18,7 @@ Contains the core scraping functions and functionality:
 - Includes functions to navigate UTR website and extract match data
 - Handles data extraction from the UTR profile pages
 
-[`startup-script.sh`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/statup-script.sh)
+[`startup-script.sh`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/statup-script.sh)
 
 Runs when the VM starts and:
 - Installs necessary dependencies
@@ -26,9 +26,9 @@ Runs when the VM starts and:
 - Starts the container with required environment variables
 - Monitors container execution and logs
 - Handles the auto-shutdown logic to terminate the VM after completion
-- See utr scraper [startup_script_README.md](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-utr-scraper/startup_script_README.md) for more detailed documentation
+- See utr scraper [startup_script_README.md](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-utr-scraper/startup_script_README.md) for more detailed documentation
 
-[`Dockerfile`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-utr-scraper/Dockerfile)
+[`Dockerfile`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-utr-scraper/Dockerfile)
 
 Defines the container environment:
 - Based on the Selenium standalone Chrome image (prebuilt docker image for these packages)
@@ -37,7 +37,7 @@ Defines the container environment:
 - Configures environment variables and entry points (i.e., `CMD ["python", "matches.py"]`)
 - Creates a reproducible environment for consistent execution during local and cloud testing
 
-[`cloudbuild.yaml`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-utr-scraper/cloudbuild.yaml)
+[`cloudbuild.yaml`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-utr-scraper/cloudbuild.yaml)
 
 Automates the Docker image build process:
 - Connected to GitHub repository for continuous deployment
@@ -56,14 +56,14 @@ Automates the Docker image build process:
 
 The repository contains sample datasets for reference. The production data is continuously updated and maintained in Google Cloud Storage (GCS) buckets.
 
-[`profile_id.csv`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/profile_id.csv)
+[`profile_id.csv`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/profile_id.csv)
 
 Contains the list of UTR profile IDs to scrape:
 - Stored and written to in `utr_scraper_bucket` in Google Cloud Storage (GCS)
 - Each row represents a tennis player to be processed
 - The scraper iterates through these profiles to collect match data
 
-[`utr_history.csv`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/utr_history.csv)
+[`utr_history.csv`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/utr_history.csv)
 
 Contains historical UTR ratings for players:
 - Stored and written to the `utr_scraper_bucket` in GCS
@@ -71,7 +71,7 @@ Contains historical UTR ratings for players:
 - Used to track player rating changes over time
 - Processed into a dictionary format for efficient lookup during scraping
 
-[`atp_utr_tennis_matches.csv`](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-matches-scraper/atp_utr_tennis_matches.csv)
+[`atp_utr_tennis_matches.csv`](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-matches-scraper/atp_utr_tennis_matches.csv)
 
 Contains the collected tennis match data:
 - Stored and written to in the `matches-scraper-bucket` in GCS
@@ -79,4 +79,4 @@ Contains the collected tennis match data:
 - Updated with new matches after each scraping run
 - Duplicates are automatically removed based on date and player combinations
 
-**Note**: For additional details and architecture information, refer to the [UTR Scraper Documentation](https://github.com/dom-schulz/utr-tennis-match-predictor/blob/main/automated-utr-scraper/README.md).
+**Note**: For additional details and architecture information, refer to the [UTR Scraper Documentation](https://github.com/jztennis/universal-tennis-predictor-utp/blob/main/automated-utr-scraper/README.md).
