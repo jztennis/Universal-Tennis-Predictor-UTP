@@ -65,7 +65,7 @@ The dataset utilizes many metrics focused on past player performance, including:
 
 
 
-The data utilized is scraped from the [UTR Website](https://www.utrsports.net/). This scraping process involves two programes that are automated on Google Cloud utilizing various services. One scraper pulls historical utr metrics and the other scrapes general match performance. For more details regrading the scraping implementation on Google Cloud, see the [automated-utr-scraper README](https://github.com/dom-schulz/utr-tennis-match-predictor/tree/main/automated-utr-scraper) 
+The data utilized is scraped from the [UTR Website](https://www.utrsports.net/). This scraping process involves two programes that are automated on Google Cloud utilizing various services. One scraper pulls historical utr metrics and the other scrapes general match performance. For more details regrading the scraping implementation on Google Cloud, see the [automated-utr-scraper README](https://github.com/jztennis/utr-tennis-match-predictor/tree/main/automated-utr-scraper) 
 
 
 ### Algorithm Details
